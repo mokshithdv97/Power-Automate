@@ -1,0 +1,9 @@
+1. Trigger-When new mail arrives
+(Subject and from filter)
+2. Html to text
+(Content-Body mail)
+3. Compose
+(@{float(first(split(last(split(body('Html_to_text'), 'Rs.')), ' has been')))})
+4. Insert row
+(date -@{substring(triggerOutputs()?['body/DateTimeReceived'], 0, 10)}, amount-compose)
+
